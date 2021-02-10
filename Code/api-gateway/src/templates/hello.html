@@ -1,0 +1,77 @@
+<html>
+  <title> Welcome to KVS </title>
+	<body>
+	Add or remove item from the customer cart:
+	<form method="post">
+		<table id="table1" style="border: 1px solid black;" cellspacing="5px" cellpadding="5%"> 
+			<tr>
+				<td  align="right">Customer name: </td>
+				<td>
+					<select name="key">
+						{% for customer in customers %}
+							<option value="{{ customer[0] }}">{{ customer[1] }}</option>
+						{% endfor %}
+					</select>
+				</td>
+				<td  align="right">Product name: </td>
+				<td>
+					<select name="value">
+						{% for product in products %}
+							<option value="{{product[0]}},{{product[1]}},{{product[2]}}">{{ product[1] }}</option>
+						{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="center"><button type="submit" formaction="/add" value="add">Add</button></td>
+				<td align="center"><button type="submit" formaction="/delete" value="delete">Remove</button></td>
+				<td></td>
+			</tr>
+		</table>
+	</form>
+	<hr>
+	Show the customer cart:
+	<form method="post">
+		<table id="table2" style="border: 1px solid black;" cellspacing="5px" cellpadding="5%"> 
+			<tr>
+				<td  align="right">Customer name: </td>
+				<td>
+					<select name="key">
+						{% for customer in customers %}
+							<option value="{{ customer[0] }}">{{ customer[1] }}</option>
+						{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="center"><button type="submit" formaction="/list" value="list">Get Cart</button></td>
+			</tr>
+		</table>
+	</form>
+	<hr>
+	Admin operation - List all carts:
+	<form method="post">
+		<table id="table3" style="border: 1px solid black;" cellspacing="5px" cellpadding="5%"> 
+			<tr>
+				<td  align="right">Key: </td>
+				<td>
+					<select name="key">
+						<option value="pname">Product Name</option>
+						<option value="price">Price</option>
+					</select>
+				</td>
+				<td  align="right">Value: </td>
+				<td>
+					<input type="text" id="value" name="value">
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="center"><button type="submit" formaction="/listall" value="listall">Get All Carts</button></td>
+			</tr>
+		</table>
+	</form>
+	</body>
+</html>

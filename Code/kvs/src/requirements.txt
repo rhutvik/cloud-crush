@@ -1,0 +1,7 @@
+uvicorn
+fastapi
+requests
+kazoo
+python-multipart
+python3-crdt
+jsonpickle

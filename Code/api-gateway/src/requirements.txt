@@ -1,0 +1,13 @@
+uvicorn
+fastapi
+jinja2
+requests
+kazoo
+python-multipart
+python3-crdt
+jsonpickle
+sqlalchemy
+databases
+databases[mysql]
+pymysql
+aiofiles
